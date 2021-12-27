@@ -4,29 +4,24 @@
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "15_11_2021.css" />
 		<title> My Web Page </title>
-		<!--
-		<style type="text/css">
-			h1 {
-				font-size: 24pt;
-				color: red;
-				text-decoration: underline;
-				font-family: tahoma, helvetica, sans-serif;
-				}
-			em	{
-				font-style: normal;
-				color: green;
-				background-color: lightgrey;
-				font-weight: bold;
-			}
-			ul {list-style-type: square;}
-		</style>
-	-->
 	</head>
-	<body>
+	<body onload="welcomeFunction(); document.body.style.backgroundColor='pink'"
+		onresize="document.body.style.backgroundColor='lightblue'"	
+		onkeydown="document.body.style.backgroundColor='white'"
+		onkeyup="document.body.style.backgroundColor='lightyellow'"	>
+		
+		
+		<script>
+		function welcomeFunction()	{
+			alert("Welcome!");
+
+		}
+		</script>
+
 	<p>
 		<strong> Introduction to Information Systems </strong>
 	</p>
-	<p class= "centered">
+	<p class= "centered" onmouseover="document.querySelector('centered') .style.font ='bold 20pt arial, serif'">
 		<em>
 		Yusuf Emir Sezgin
 		<br>
@@ -36,17 +31,19 @@
 
 	<p> Evolution of homo species </p>
 
-	<ul>
+	<ul id="unorderedL" onmouseover="document.getElementById('unorderedL') .style.backgroundColor='purple' ">
 		<li> Homo habilis (able man) </li>
 		<li> Homo erectus (upright man) </li>
 		<li> Homo neanderthalensis </li>
 		<li> Homo floresiensis (hobbit) </li>
 		<li> Homo sapiens (wise man) </li>
-		<ul>
+		<ul id="insideUL" onclick="document.getElementById('insideUL') .style.backgroundColor='orange'">
 			<li> Homo sapiens sapiens </li>
 		</ul>
 	</ul>
-		<h1> <strong>Human Evolution</strong> </h1>
+		<h1 onmouseover="style.color='orange'; style.backgroundColor='lightgreen'"
+			onmouseout="style.color='red'; style.backgroundColor='white'"> 
+		<strong>Human Evolution</strong> </h1>
 
 		<p> <img src="evolution-diagram.png"/> </p>
 
@@ -60,7 +57,8 @@
 
 		<p>This image is clickable, click on it and try.
 			<a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">
-				<img src="evolution-diagram.png">
+				<img id="myImg" alt="Evolution diagram" onclick="alert(document.getElementById('myImg') .alt)"
+				src="evolution-diagram.png">
 			</a>
 		</p>
 
